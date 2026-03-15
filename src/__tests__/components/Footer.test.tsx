@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 import { offices } from '@/lib/constants';
 
 describe('Footer', () => {
-  it('renders all three offices', () => {
+  it('renders all three office cities', () => {
     render(<Footer />);
-    expect(screen.getByText(/Austin Office \(HQ\)/)).toBeInTheDocument();
-    expect(screen.getByText(/Dallas Office/)).toBeInTheDocument();
-    expect(screen.getByText(/Houston Office/)).toBeInTheDocument();
+    expect(screen.getByText(/Austin \(HQ\)/)).toBeInTheDocument();
+    expect(screen.getByText('Dallas')).toBeInTheDocument();
+    expect(screen.getByText('Houston')).toBeInTheDocument();
   });
 
   it('renders office phone numbers', () => {
@@ -23,11 +23,6 @@ describe('Footer', () => {
     for (const office of offices) {
       expect(screen.getByText(office.email)).toBeInTheDocument();
     }
-  });
-
-  it('renders the Austin HQ designation', () => {
-    render(<Footer />);
-    expect(screen.getByText(/Austin Office \(HQ\)/)).toBeInTheDocument();
   });
 
   it('renders the company tagline', () => {
@@ -57,5 +52,12 @@ describe('Footer', () => {
     expect(fbLink).toBeInTheDocument();
     expect(igLink).toBeInTheDocument();
     expect(twLink).toBeInTheDocument();
+  });
+
+  it('renders navigation links', () => {
+    render(<Footer />);
+    expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Services' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Projects' })).toBeInTheDocument();
   });
 });

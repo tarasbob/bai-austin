@@ -34,7 +34,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 1,
     title: 'Theater & Auditorium Acoustics',
-    image: '/images/slides/slide-1-theater.gif',
+    image: '/images/slides/slide-1-theater.jpg',
     gradient: 'from-[#0f1b2d] via-[#1a3a5c] to-[#1a9aaa]',
   },
   {
@@ -52,7 +52,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 4,
     title: 'Transportation Facilities',
-    image: '/images/slides/slide-4-airport.jpg',
+    image: '/images/slides/slide-4-airport.gif',
     gradient: 'from-[#1a3a5c] via-[#0f1b2d] to-[#1a9aaa]',
   },
 ];

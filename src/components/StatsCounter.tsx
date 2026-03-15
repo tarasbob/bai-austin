@@ -39,8 +39,9 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 
 export default function StatsCounter() {
   return (
-    <section className="bg-[#0f1b2d] py-20">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="relative bg-[#0f1b2d] py-20 grain overflow-hidden">
+      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_50%,rgba(26,154,170,0.4),transparent_50%)]" />
+      <div className="mx-auto max-w-7xl px-6 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {stats.map((stat, i) => (
             <motion.div
@@ -51,7 +52,7 @@ export default function StatsCounter() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="text-center"
             >
-              <div className="text-5xl md:text-6xl font-light text-white mb-2 tracking-tight">
+              <div className="text-5xl md:text-6xl font-light text-white mb-2 tracking-tight font-display">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="h-px w-12 bg-[#c8a555] mx-auto mb-3" />

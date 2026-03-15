@@ -1,12 +1,20 @@
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google';
+import { DM_Sans, Playfair_Display } from 'next/font/google';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const dmSans = DM_Sans({
+  variable: '--font-body',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+});
+
+const playfair = Playfair_Display({
+  variable: '--font-display',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +39,15 @@ export const metadata: Metadata = {
       'Consultants in Acoustics, Sound Reinforcement, and Audiovisual Systems. 85+ years, 6,000+ projects, 3 Texas offices.',
     type: 'website',
     locale: 'en_US',
+    siteName: 'BAi Acoustics & AV Design',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BAi | Acoustics Consultants Since 1935',
+    description:
+      'Consultants in Acoustics, Sound Reinforcement, and Audiovisual Systems.',
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -41,7 +57,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} font-sans antialiased`}>
+      <body
+        className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}
+      >
+        <JsonLd />
         <Navbar />
         <main>{children}</main>
         <Footer />

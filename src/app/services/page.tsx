@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      {/* Page hero */}
       <section className="relative bg-[#0f1b2d] pt-32 pb-20 overflow-hidden">
         <Image
           src="/images/services/orchestra.jpg"
@@ -28,8 +27,8 @@ export default function ServicesPage() {
             <span className="text-[#c8a555] text-xs uppercase tracking-[0.3em] font-medium">
               What We Do
             </span>
-            <h1 className="text-5xl md:text-7xl font-light text-white mt-4 tracking-tight">
-              Our <span className="font-semibold">Services</span>
+            <h1 className="text-5xl md:text-7xl font-light text-white mt-4 tracking-tight font-display">
+              Our <span className="font-semibold italic">Services</span>
             </h1>
             <p className="text-white/50 mt-6 max-w-xl text-lg font-light">
               Comprehensive acoustics and audiovisual consulting for every built environment.
@@ -38,9 +37,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services grid */}
-      <section className="bg-[#fafafa] py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative bg-[#fafafa] py-24 grain overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, i) => (
               <ServiceCard key={service.id} service={service} index={i} />
@@ -49,12 +47,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-light text-[#0f1b2d] mb-6 tracking-tight">
-              Need <span className="font-semibold">Acoustics Consulting</span>?
+            <h2 className="text-3xl md:text-4xl font-light text-[#0f1b2d] mb-6 tracking-tight font-display">
+              Need <span className="font-semibold italic">Acoustics Consulting</span>?
             </h2>
             <p className="text-[#64748b] mb-8 max-w-2xl mx-auto">
               Our team of experienced acousticians and AV consultants is ready to help with your

@@ -11,7 +11,6 @@ export default function Home() {
       <Hero />
       <StatsCounter />
 
-      {/* Intro section */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -20,10 +19,10 @@ export default function Home() {
                 <span className="text-[#c8a555] text-xs uppercase tracking-[0.3em] font-medium">
                   About BAi
                 </span>
-                <h2 className="text-4xl md:text-5xl font-light text-[#0f1b2d] mt-4 mb-6 tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-light text-[#0f1b2d] mt-4 mb-6 tracking-tight font-display">
                   Shaping Sound
                   <br />
-                  <span className="font-semibold">Since 1935</span>
+                  <span className="font-semibold italic">Since 1935</span>
                 </h2>
                 <p className="text-[#64748b] leading-relaxed mb-6">
                   Since the time of its founding by Dr. C.P. Boner in 1935, the firm of Boner
@@ -59,7 +58,6 @@ export default function Home() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                {/* Decorative offset border */}
                 <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#c8a555]/20 rounded-sm -z-10" />
               </div>
             </ScrollReveal>
@@ -67,16 +65,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Services */}
-      <section className="bg-[#fafafa] py-24">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="relative bg-[#fafafa] py-24 grain overflow-hidden">
+        <div className="mx-auto max-w-7xl px-6 relative">
           <ScrollReveal>
             <div className="text-center mb-16">
               <span className="text-[#c8a555] text-xs uppercase tracking-[0.3em] font-medium">
                 What We Do
               </span>
-              <h2 className="text-4xl md:text-5xl font-light text-[#0f1b2d] mt-4 tracking-tight">
-                Our <span className="font-semibold">Expertise</span>
+              <h2 className="text-4xl md:text-5xl font-light text-[#0f1b2d] mt-4 tracking-tight font-display">
+                Our <span className="font-semibold italic">Expertise</span>
               </h2>
             </div>
           </ScrollReveal>
@@ -84,8 +81,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 3).map((service, i) => (
               <ScrollReveal key={service.id} delay={i * 0.1}>
-                <div className="bg-white p-8 rounded-sm border border-gray-100 hover:shadow-lg transition-shadow duration-500 h-full">
-                  <h3 className="text-lg font-semibold text-[#0f1b2d] mb-3">{service.title}</h3>
+                <div className="bg-white p-8 rounded-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-500 h-full group">
+                  <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-[#1a9aaa] to-[#c8a555] transition-all duration-500 mb-6" />
+                  <h3 className="text-lg font-semibold text-[#0f1b2d] mb-3 font-display">
+                    {service.title}
+                  </h3>
                   <ul className="space-y-2">
                     {service.items.slice(0, 3).map((item) => (
                       <li key={item} className="text-sm text-[#64748b]">
@@ -111,15 +111,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-br from-[#0f1b2d] via-[#1a3a5c] to-[#0f1b2d] py-24">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+      <section className="relative bg-gradient-to-br from-[#0f1b2d] via-[#1a3a5c] to-[#0f1b2d] py-24 grain overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_70%_30%,rgba(200,165,85,0.4),transparent_50%)]" />
+        <div className="mx-auto max-w-4xl px-6 text-center relative">
           <ScrollReveal>
             <span className="text-[#c8a555] text-xs uppercase tracking-[0.3em] font-medium">
               Get In Touch
             </span>
-            <h2 className="text-3xl md:text-5xl font-light text-white mt-4 mb-6 tracking-tight">
-              Ready to Start Your <span className="font-semibold">Project</span>?
+            <h2 className="text-3xl md:text-5xl font-light text-white mt-4 mb-6 tracking-tight font-display">
+              Ready to Start Your{' '}
+              <span className="font-semibold italic">Project</span>?
             </h2>
             <p className="text-white/60 max-w-2xl mx-auto mb-10">
               With offices in Austin, Dallas, and Houston, our team of experienced acousticians and
@@ -127,7 +128,7 @@ export default function Home() {
             </p>
             <a
               href="mailto:info@baiaustin.com"
-              className="inline-block bg-[#c8a555] text-[#0f1b2d] px-10 py-4 text-sm uppercase tracking-wider font-medium hover:bg-[#d4b56a] transition-colors duration-300"
+              className="inline-block bg-[#c8a555] text-[#0f1b2d] px-10 py-4 text-sm uppercase tracking-wider font-medium hover:bg-[#d4b56a] transition-colors duration-300 glow-gold"
             >
               Contact Us
             </a>

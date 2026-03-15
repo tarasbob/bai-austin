@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   return (
     <>
-      {/* Page hero */}
       <section className="relative bg-[#0f1b2d] pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_40%_60%,rgba(200,165,85,0.4),transparent_50%)]" />
         <div className="mx-auto max-w-7xl px-6 relative">
@@ -20,8 +19,8 @@ export default function TeamPage() {
             <span className="text-[#c8a555] text-xs uppercase tracking-[0.3em] font-medium">
               Our People
             </span>
-            <h1 className="text-5xl md:text-7xl font-light text-white mt-4 tracking-tight">
-              The <span className="font-semibold">Team</span>
+            <h1 className="text-5xl md:text-7xl font-light text-white mt-4 tracking-tight font-display">
+              The <span className="font-semibold italic">Team</span>
             </h1>
             <p className="text-white/50 mt-6 max-w-xl text-lg font-light">
               Dedicated professionals with decades of experience in acoustics and audiovisual
@@ -31,7 +30,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Team grid */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -42,12 +40,11 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="bg-[#fafafa] py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+      <section className="relative bg-[#fafafa] py-20 grain overflow-hidden">
+        <div className="mx-auto max-w-4xl px-6 text-center relative">
           <ScrollReveal>
-            <h2 className="text-3xl md:text-4xl font-light text-[#0f1b2d] mb-6 tracking-tight">
-              Work <span className="font-semibold">With Us</span>
+            <h2 className="text-3xl md:text-4xl font-light text-[#0f1b2d] mb-6 tracking-tight font-display">
+              Work <span className="font-semibold italic">With Us</span>
             </h2>
             <p className="text-[#64748b] mb-8 max-w-2xl mx-auto">
               Our team combines decades of acoustics expertise with cutting-edge audiovisual design

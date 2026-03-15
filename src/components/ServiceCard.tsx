@@ -35,7 +35,6 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative bg-white rounded-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
     >
-      {/* Service image */}
       {service.image && (
         <div className="relative h-48 overflow-hidden">
           <Image
@@ -50,18 +49,14 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       )}
 
       <div className="p-8">
-        {/* Accent line */}
         <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#1a9aaa] to-[#c8a555] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
-        {/* Icon */}
         <div className="mb-6 inline-flex items-center justify-center w-14 h-14 rounded-sm bg-[#0f1b2d]/5 text-[#1a9aaa] group-hover:bg-[#0f1b2d] group-hover:text-[#c8a555] transition-all duration-300">
           {Icon && <Icon size={28} />}
         </div>
 
-        {/* Title */}
-        <h3 className="text-xl font-semibold text-[#0f1b2d] mb-4">{service.title}</h3>
+        <h3 className="text-xl font-semibold text-[#0f1b2d] mb-4 font-display">{service.title}</h3>
 
-        {/* Items */}
         <ul className="space-y-2">
           {service.items.map((item) => (
             <li
@@ -73,8 +68,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
           ))}
         </ul>
 
-        {/* Subsections for expanded content */}
-        {service.subsections && service.subsections.map((sub) => (
+        {service.subsections?.map((sub) => (
           <div key={sub.heading} className="mt-4">
             <h4 className="text-xs uppercase tracking-wider text-[#0f1b2d] font-semibold mb-2">
               {sub.heading}

@@ -3,18 +3,15 @@ import { describe, it, expect, vi } from 'vitest';
 import Navbar from '@/components/Navbar';
 import { navLinks } from '@/lib/constants';
 
-// Mock next/navigation
 vi.mock('next/navigation', () => ({
   usePathname: () => '/',
 }));
 
-// Mock framer-motion to simple divs
 vi.mock('framer-motion', () => ({
   motion: {
     div: ({ children, ...props }: React.PropsWithChildren<Record<string, unknown>>) => {
-      const { initial, animate, exit, transition, whileInView, viewport, ...rest } = props as Record<string, unknown>;
       const safeProps: Record<string, unknown> = {};
-      for (const [key, val] of Object.entries(rest)) {
+      for (const [key, val] of Object.entries(props)) {
         if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
           safeProps[key] = val;
         }
@@ -22,9 +19,8 @@ vi.mock('framer-motion', () => ({
       return <div {...safeProps}>{children}</div>;
     },
     span: ({ children, ...props }: React.PropsWithChildren<Record<string, unknown>>) => {
-      const { layoutId, transition, ...rest } = props as Record<string, unknown>;
       const safeProps: Record<string, unknown> = {};
-      for (const [key, val] of Object.entries(rest)) {
+      for (const [key, val] of Object.entries(props)) {
         if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
           safeProps[key] = val;
         }
@@ -61,7 +57,7 @@ describe('Navbar', () => {
     render(<Navbar />);
     for (const link of navLinks) {
       const elements = screen.getAllByRole('link', { name: link.label });
-      const matchingLink = elements.find(el => el.getAttribute('href') === link.href);
+      const matchingLink = elements.find((el) => el.getAttribute('href') === link.href);
       expect(matchingLink).toBeTruthy();
     }
   });
